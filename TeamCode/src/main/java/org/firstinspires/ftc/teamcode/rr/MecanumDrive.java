@@ -50,19 +50,19 @@ import java.util.List;
 public final class MecanumDrive {
     public static class Params {
         // drive model parameters
-        public double inPerTick = 0.0233463035;
-        public double lateralInPerTick = -0.84955752212;
-        public double trackWidthTicks = 1350.5260068206214;
+        public double inPerTick = 0.02269026734;
+        public double lateralInPerTick = -0.00227129337;
+        public double trackWidthTicks = 1352.2273968554646;
 
         // feedforward parameters (in tick units)
-        public double kS = 0.8374992261636658;
-        public double kV = 0.004353019105233793;
-        public double kA = 0;
+        public double kS = 1.0887305527188609;
+        public double kV = 0.004257891331389054;
+        public double kA = 0.0003;
 
         // path profile parameters (in inches)
         public double maxWheelVel = 50;
-        public double minProfileAccel = -30;
-        public double maxProfileAccel = 50;
+        public double minProfileAccel = -10;
+        public double maxProfileAccel = 10;
 
         // turn profile parameters (in radians)
         public double maxAngVel = Math.PI; // shared with path
@@ -191,7 +191,7 @@ public final class MecanumDrive {
         imu = hardwareMap.get(IMU.class, "imu");
         IMU.Parameters parameters = new IMU.Parameters(new RevHubOrientationOnRobot(
                 RevHubOrientationOnRobot.LogoFacingDirection.UP,
-                RevHubOrientationOnRobot.UsbFacingDirection.FORWARD));
+                RevHubOrientationOnRobot.UsbFacingDirection.LEFT));
         imu.initialize(parameters);
 
         voltageSensor = hardwareMap.voltageSensor.iterator().next();
