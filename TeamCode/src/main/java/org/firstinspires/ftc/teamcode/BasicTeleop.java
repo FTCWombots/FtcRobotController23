@@ -20,7 +20,7 @@ public class BasicTeleop extends LinearOpMode {
         robot = new MecanumDrive(hardwareMap, new Pose2d(new Vector2d(0,0), 0));
         waitForStart();
         while(opModeIsActive()){
-            pose = new PoseVelocity2d(new Vector2d(Math.pow(-gamepad1.left_stick_y, 3), Math.pow(-gamepad1.left_stick_x, 3)), Math.pow(-gamepad1.right_stick_x, 3));
+            pose = new PoseVelocity2d(new Vector2d(Math.pow(-gamepad1.left_stick_y, 3)*.8, Math.pow(-gamepad1.left_stick_x, 3)*.8), Math.pow(-gamepad1.right_stick_x, 3)*.8);
             robot.setDrivePowers(pose);
         }
     }

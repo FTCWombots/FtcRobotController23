@@ -4,10 +4,11 @@ import static java.lang.System.currentTimeMillis;
 import static java.lang.System.nanoTime;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import java.util.List;
-
+@Disabled
 @Autonomous(name = "AStarTest", group = "PathfindingTests")
 public class AStarTest extends LinearOpMode {
     @Override
