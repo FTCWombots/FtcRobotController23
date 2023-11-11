@@ -12,7 +12,6 @@ import org.firstinspires.ftc.teamcode.rr.MecanumDrive;
 @TeleOp(name = "basicteleop")
 public class BasicTeleop extends LinearOpMode {
     MecanumDrive robot;
-    double weight = 1;
     boolean a = false;
     PoseVelocity2d pose;
 
@@ -21,7 +20,7 @@ public class BasicTeleop extends LinearOpMode {
         robot = new MecanumDrive(hardwareMap, new Pose2d(new Vector2d(0,0), 0));
         waitForStart();
         while(opModeIsActive()){
-            pose = new PoseVelocity2d(new Vector2d(-gamepad1.left_stick_y, -gamepad1.left_stick_x), -gamepad1.right_stick_x);
+            pose = new PoseVelocity2d(new Vector2d(Math.pow(-gamepad1.left_stick_y, 3), Math.pow(-gamepad1.left_stick_x, 3)), Math.pow(-gamepad1.right_stick_x, 3));
             robot.setDrivePowers(pose);
         }
     }

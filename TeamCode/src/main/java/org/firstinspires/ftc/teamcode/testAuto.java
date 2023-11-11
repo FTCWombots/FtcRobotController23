@@ -16,8 +16,8 @@ public class testAuto extends LinearOpMode {
         waitForStart();
         Actions.runBlocking(
                 robot.actionBuilder(new Pose2d(0, 0, 0))
-                        .lineToX(24)
-                        .turnTo(Math.toRadians(38))
+                        .lineToX(42)
                         .build());
+
     }
 }
