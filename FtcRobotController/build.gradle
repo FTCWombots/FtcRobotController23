@@ -22,5 +22,8 @@ android {
     }
     namespace = 'com.qualcomm.ftcrobotcontroller'
 }
+repositories {
+    mavenCentral()
+}
 
 apply from: '../build.dependencies.gradle'
